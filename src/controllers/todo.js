@@ -12,21 +12,21 @@ export async function create (ctx) {
 }
 
 export async function show (ctx) {
-  const todo = await Todo.findById(ctx.request.params.id)
+  const todo = await Todo.findById(ctx.params.id)
   if (!todo) ctx.throw(404)
   ctx.status = 200
   ctx.body = todo
 }
 
 export async function update (ctx) {
-  const todo = await Todo.findByIdAndUpdate(ctx.request.params.id, ctx.request.body, { new: true })
+  const todo = await Todo.findByIdAndUpdate(ctx.params.id, ctx.request.body, { new: true })
   if (!todo) ctx.throw(404)
   ctx.status = 200
   ctx.body = todo
 }
 
 export async function destroy (ctx) {
-  const todo = await Todo.findByIdAndRemove(ctx.request.params.id)
+  const todo = await Todo.findByIdAndRemove(ctx.params.id)
   if (!todo) ctx.throw(404)
   ctx.status = 204
   ctx.body = todo
