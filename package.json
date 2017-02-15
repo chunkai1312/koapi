@@ -4,6 +4,7 @@
   "description": "A boilerplate for building api services based on Koa v2",
   "main": "index.js",
   "scripts": {
+    "start": "node dist/index.js | ./node_modules/.bin/bunyan -o short",
     "dev": "nodemon src/index.js",
     "build": "babel src -d dist",
     "test": "cross-env NODE_ENV=test nyc mocha --compilers js:babel-register test/**/*.test.js",
@@ -13,9 +14,14 @@
   "author": "Chun-Kai Wang <chunkai1312@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "bunyan": "^1.8.5",
+    "kcors": "next",
     "koa": "next",
     "koa-bodyparser": "next",
+    "koa-bunyan-logger": "next",
     "koa-compose": "next",
+    "koa-compress": "next",
+    "koa-helmet": "^3.1.0",
     "koa-logger": "next",
     "koa-router": "next",
     "mongoose": "^4.8.2"
