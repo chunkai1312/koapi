@@ -22,6 +22,7 @@
     "koa-compose": "next",
     "koa-compress": "next",
     "koa-helmet": "^3.1.0",
+    "koa-json-error": "next",
     "koa-logger": "next",
     "koa-router": "next",
     "mongoose": "^4.8.2"
