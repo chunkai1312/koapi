@@ -4,6 +4,7 @@ import bodyParser from 'koa-bodyparser'
 import compress from 'koa-compress'
 import cors from 'kcors'
 import helmet from 'koa-helmet'
+import error from 'koa-json-error'
 import compose from 'koa-compose'
 import config from '../config'
 
@@ -20,7 +21,8 @@ export default () => compose([
   compress(),
   bodyParser(),
   cors(),
-  helmet()
+  helmet(),
+  error()
 ])
 
 
