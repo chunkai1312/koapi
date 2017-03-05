@@ -1,4 +1,9 @@
 {
   "include": ["src"],
-  "exclude": ["src/config"]
+  "exclude": ["src/config"],
+  "require": [
+    "babel-register"
+  ],
+  "sourceMap": false,
+  "instrument": false
 }
