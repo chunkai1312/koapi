@@ -16,11 +16,15 @@ const requestLogger = (config.env === 'development')
     koaBunyanLogger.requestLogger()
   ])
 
-export default () => compose([
+const middlewares = [
   requestLogger(),
   compress(),
   bodyParser(),
   cors(),
   helmet(),
   error()
-])
+]
+
+if (config.env === 'test') middlewares.shift()
+
+export default () => compose(middlewares)
