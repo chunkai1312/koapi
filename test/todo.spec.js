@@ -1,4 +1,3 @@
-import { expect } from 'chai'
 import request from 'supertest'
 import app from '../src/app'
 
@@ -13,7 +12,7 @@ describe('Todo API:', () => {
         .get('/api/todos')
         .expect('Content-Type', /json/)
         .expect(200)
-        .then(res => expect(res.body).to.be.an('array'))
+        .then(res => expect(res.body).toBeInstanceOf(Array))
     })
   })
 
@@ -27,9 +26,9 @@ describe('Todo API:', () => {
         .expect('Content-Type', /json/)
         .expect(201)
         .then(res => {
-          expect(res.body.id).to.exist
-          expect(res.body.title).to.equal('New Todo')
-          expect(res.body.completed).to.be.false
+          expect(res.body.id).toBeDefined()
+          expect(res.body.title).toEqual('New Todo')
+          expect(res.body.completed).toBeFalsy()
           todo = res.body
         })
     })
@@ -42,9 +41,9 @@ describe('Todo API:', () => {
         .expect('Content-Type', /json/)
         .expect(200)
         .then(res => {
-          expect(res.body.id).to.equal(todo.id)
-          expect(res.body.title).to.equal(todo.title)
-          expect(res.body.completed).to.be.false
+          expect(res.body.id).toEqual(todo.id)
+          expect(res.body.title).toEqual(todo.title)
+          expect(res.body.completed).toBeFalsy()
         })
     })
   })
@@ -60,9 +59,9 @@ describe('Todo API:', () => {
         .expect('Content-Type', /json/)
         .expect(200)
         .then(res => {
-          expect(res.body.id).to.equal(todo.id)
-          expect(res.body.title).to.equal('Updated Todo')
-          expect(res.body.completed).to.be.true
+          expect(res.body.id).toEqual(todo.id)
+          expect(res.body.title).toEqual('Updated Todo')
+          expect(res.body.completed).toBeTruthy()
         })
     })
   })
