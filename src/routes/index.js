@@ -1,5 +1,5 @@
 import Router from 'koa-router'
-import compose from 'koa-compose'
+import { compose } from 'koa-convert'
 import { todo } from '../controllers'
 
 const router = new Router({ prefix: '/api' })
