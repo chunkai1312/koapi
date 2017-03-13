@@ -7,10 +7,10 @@
 ## Features
 
 - ES6/ES2015 support using [Babel](https://babeljs.io)
-- Use [MongoDB](https://www.mongodb.com/) for the database and [Mongoose](https://github.com/Automattic/mongoose) ODM for schema creation
+- Use [MongoDB](https://www.mongodb.com) for the database and [Mongoose](https://github.com/Automattic/mongoose) ODM for schema creation
 - Use [Bunyan](https://github.com/winstonjs/winston) for logging errors and events
-- Use [nodemon](https://github.com/remy/nodemon) for watching and restarting
-- Use [Mocha](https://github.com/mochajs/mocha) as test framework
+- Use [Nodemon](https://github.com/remy/nodemon) for watching and restarting
+- Use [Jest](https://facebook.github.io/jest) as test framework
 
 ## Structure
 
