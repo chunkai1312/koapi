@@ -1,0 +1,4 @@
+{
+  "testRegex": "(/test/.*\\.spec.js)$",
+  "coveragePathIgnorePatterns": ["/src/config/"]
+}
