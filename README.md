@@ -17,7 +17,7 @@
 ```
 .
 ├── bin
-│   ├── server.js        # entry of server
+│   └── server.js        # entry of server
 ├── src
 │   ├── config           # app configurations
 │   │   ├── env          # environment variable definitions
