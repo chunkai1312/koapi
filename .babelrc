@@ -1,4 +1,11 @@
 {
-  "presets": ["es2015", "stage-0"],
-  "plugins": ["transform-runtime", "add-module-exports"]
+  "presets": [
+    ["env", {
+      "targets": {
+        "node": true
+      }
+    }],
+    "stage-0"
+  ],
+  "plugins": ["add-module-exports"]
 }
