@@ -3,7 +3,8 @@ import { Todo } from '../models'
 export default {
 
   index: async (ctx) => {
-    const todos = await Todo.find()
+    const todos = await Todo.get()
+    ctx.status = 200
     ctx.body = todos
   },
 
@@ -14,23 +15,23 @@ export default {
   },
 
   show: async (ctx) => {
-    const todo = await Todo.findById(ctx.params.id)
+    const todo = await Todo.getById(ctx.params.id)
     if (!todo) ctx.throw(404)
     ctx.status = 200
     ctx.body = todo
   },
 
   update: async (ctx) => {
-    const todo = await Todo.findByIdAndUpdate(ctx.params.id, ctx.request.body, { new: true })
+    const todo = await Todo.updateById(ctx.params.id, ctx.request.body)
     if (!todo) ctx.throw(404)
     ctx.status = 200
     ctx.body = todo
   },
 
   destroy: async (ctx) => {
-    const todo = await Todo.findByIdAndRemove(ctx.params.id)
+    const todo = await Todo.deleteById(ctx.params.id)
     if (!todo) ctx.throw(404)
-    ctx.status = 204
+    ctx.status = 200
     ctx.body = todo
   }
 
