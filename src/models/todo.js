@@ -88,6 +88,4 @@ TodoSchema.plugin(mongooseHidden(), {
   }
 })
 
-const Todo = mongoose.model('Todo', TodoSchema)
-
-export default Todo
+export default mongoose.model('Todo', TodoSchema)
