@@ -17,7 +17,7 @@ if (argv.help) {
   /* eslint comma-style: 0, indent: 0 */
   var usage = [
       ''
-    , '  Usage: punwave-insights-server [options]'
+    , '  Usage: koapi [options]'
     , ''
     , '  Options:'
     , ''
