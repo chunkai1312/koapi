@@ -11,7 +11,7 @@
     "test": "cross-env NODE_ENV=test jest --config .jestrc --forceExit",
     "test:watch": "npm test -- --watch",
     "test:coverage": "npm test -- --coverage",
-    "lint": "eslint src"
+    "lint": "eslint src test"
   },
   "author": "Chun-Kai Wang <chunkai1312@gmail.com>",
   "license": "MIT",
