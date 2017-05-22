@@ -7,7 +7,7 @@
     "start": "npm run build && npm run prod",
     "prod": "cross-env NODE_ENV=production node bin/server.js | ./node_modules/.bin/bunyan -o short",
     "dev": "nodemon bin/server.js",
-    "build": "babel src -d dist",
+    "build": "babel src -d dist --copy-files",
     "test": "cross-env NODE_ENV=test jest --config .jestrc --forceExit",
     "test:watch": "npm test -- --watch",
     "test:coverage": "npm test -- --coverage",
