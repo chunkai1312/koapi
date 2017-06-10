@@ -1,9 +1,7 @@
 import Koa from 'koa'
 import middlewares from './middlewares'
 import routes from './routes'
-import connectMongoDB from './config/mongoose'
-
-connectMongoDB()
+import './config/mongoose'
 
 const app = new Koa()
   .use(middlewares())
