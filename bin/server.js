@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+require('dotenv').config()
+
 var argv = require('minimist')(process.argv.slice(2), {
   alias: {
     H: 'host',
@@ -45,7 +47,7 @@ var app = (env === 'development') ? require('babel-register') && require('../src
 
 app.listen(port, host, function (err) {
   if (err) {
-    console.error('punwave-insights-server:', err.stack)
+    console.error('server:', err.stack)
     process.exit(1)
   }
   console.log('Server is running on %s:%d, in %s mode', host, port, env)
