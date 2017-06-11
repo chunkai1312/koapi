@@ -2,6 +2,8 @@ import mongoose from 'mongoose'
 import glob from 'glob'
 import config from '../config'
 
+// mongoose.set('debug', true)
+
 mongoose.Promise = global.Promise
 
 mongoose.connect(config.mongoDB.uri, config.mongoDB.options)
